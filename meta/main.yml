@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  role_name: apache_custom
+  author: Marcus Vinicius Costa de Oliveira
+  description: Instalacao de uma pagina web simples no Apache
+  company: 4Linux
+  license: GPLv3
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+    - name: EL
+      versions:
+        - 8
+  galaxy_tags:
+    - packages
+    - files
+dependencies: []

@@ -1,0 +1,25 @@
+---
+- name: Define a configuracao do arquivo index.html
+  template:
+    src: pagina.j2
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
+  tags: web-index
+
+- name: Verifica se o diretorio contato
+  stat:
+    path: /var/www/html/contato
+  register: contato_file
+  tags: pagina-contato
+
+- name: Copia diretorio contato
+  when: not contato_file.stat.exists
+  copy:
+    src: contato
+    dest: /var/www/html/
+    owner: root
+    group: root
+    mode: 0644
+  tags: pagina-contato
