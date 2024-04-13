@@ -2,4 +2,4 @@
 - hosts: local
   remote_user: root
   roles:
-    - { role: apache_custom, http_port: 8080 }
+    - ../..
